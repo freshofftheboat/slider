@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>轮播图</title>
+        <style>
+            .uu-slide {
+                position: relative;
+                width: 500px;
+                height: 400px;
+            }
+            .slide-image {
+                display: none;
+            }
+            .uu-active {
+                display: inline-block;
+                width: 500px;
+                height: 400px;
+            }
+            .slide-button {
+                height: 50px;
+                width: 30px;
+                color: white;
+                background: black;
+                opacity: 0.3;
+                border: none;
+                cursor: pointer;
+            }
+            /*去焦点边框*/
+            .slide-button:focus {
+                 outline: none;
+             }
+            .uu-left {
+                left: 0;
+            }
+            .uu-right {
+                right: 0;
+            }
+
+            /*垂直居中*/
+            .uu-vertical-center {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            /*水平居中*/
+            .uu-slide-indicators {
+                position: absolute;
+                bottom: 10px;
+                left: 50%;
+                transform: translateX(-50%);
+                text-align: center;
+            }
+            .slide-indi {
+                display: inline-block;
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background: red;
+            }
+            .uu-white {
+                background: white;
+            }
+
+            .hide {
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="uu-3">
+            <!-- data-imgs 图片总数 -->
+            <!-- data-active 当前显示图片下标 -->
+            <div class="uu-slide" data-imgs="3" data-active="0">
+                <img id="id-image-0" class="slide-image uu-active" src="images/1.jpg" alt="">
+                <img id="id-image-1" class="slide-image" src="images/2.jpg" alt="">
+                <img id="id-image-2" class="slide-image" src="images/3.jpg" alt="">
+                <button class="slide-button hide uu-vertical-center uu-left" data-offset="-1">
+                    <!-- HTML 转义符号&lt; 代表 < less than -->
+                    &lt;
+                </button>
+                <button class="slide-button hide uu-vertical-center uu-right" data-offset="1">
+                    <!-- HTML 转义符号&gt; 代表 > -->
+                    &gt;
+                </button>
+                <div class="uu-slide-indicators">
+                    <div id="id-indi-0" class="slide-indi uu-white" data-index="0"></div>
+                    <div id="id-indi-1" class="slide-indi" data-index="1"></div>
+                    <div id="id-indi-2" class="slide-indi" data-index="2"></div>
+                </div>
+            </div>
+        </div>
+        <script src="uu.js"></script>
+        <script src="rotation.js"></script>
+    </body>
+</html>
